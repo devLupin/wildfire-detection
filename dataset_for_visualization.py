@@ -9,7 +9,7 @@ label_path = os.path.join(root_path, "labels")
 classes = os.listdir(image_path)
 
 if __name__ == '__main__':
-    save_path = 'dataset/data.csv'
+    save_path = 'dataset/bbox.csv'
     
     if(os.path.exists(save_path)):
         print(f'[*] Already exists')
