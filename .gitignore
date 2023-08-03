@@ -11,6 +11,9 @@
 *.png
 *.jpg
 *.jpeg
+*.tif
+*.tiff
+dataset/*
 
 # User-specific files
 *.rsuser
