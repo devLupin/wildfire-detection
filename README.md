@@ -3,7 +3,7 @@
 
 A faster way to detect fire using A.I.
 
-
+https://github.com/devLupin/wildfire-detection/assets/33558083/a18ba917-625c-4e84-a1ae-9f5265e4ea31
 
 ## 01. Used Dataset
 <hr>
