@@ -18,6 +18,8 @@ dataset/*
 *.user
 *.userosscache
 *.sln.docstates
+video-frame/*
+video-frame-detection/*
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
