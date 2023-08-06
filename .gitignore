@@ -7,12 +7,8 @@
 .vscode
 
 # ignore dataset files
-*.txt
-*.png
-*.jpg
-*.jpeg
-*.tif
-*.tiff
+*.onnx
+*.pt
 *.json
 dataset/*
 
