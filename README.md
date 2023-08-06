@@ -46,7 +46,7 @@ https://github.com/devLupin/wildfire-detection/assets/33558083/a18ba917-625c-4e8
   - Move it `[wildfire-detection]/yolov8/runs/train/weights`
 
 
-## Quick Start
+## 05. Quick Start
 <hr>
 
 - Fire Detection from webcam
@@ -58,6 +58,11 @@ https://github.com/devLupin/wildfire-detection/assets/33558083/a18ba917-625c-4e8
   cd [wildfire-detection]
   streamlit run app.py
   ```
+
+## 06. Result
+
+- [train](yolov8/runs/train/)
+- [validation](yolov8/runs/val/)
 
 ## License
 <hr>
