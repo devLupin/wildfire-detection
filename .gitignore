@@ -11,6 +11,9 @@
 *.pt
 *.json
 dataset/*
+Config.py
+record_video/*
+user/*
 
 # User-specific files
 *.rsuser

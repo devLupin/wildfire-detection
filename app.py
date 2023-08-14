@@ -5,15 +5,16 @@ import cv2
 from ultralytics import YOLO
 import os
 import pandas as pd
+from Config import Config
 
 clear = lambda: os.system('cls')
 
 # Load model
-model = YOLO('yolov8/runs/train/weights/best.pt')
+model = YOLO(Config.MODEL)
 blue_color = (255, 0, 0)
 
 st.title("Real-tim Fire Detection")
-st.markdown("Made by [Lupin](https://github.com/devLupin)")
+st.markdown("Authored by : [Lupin](https://github.com/devLupin)")
 
 
 def callback(frame):

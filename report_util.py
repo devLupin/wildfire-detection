@@ -4,22 +4,22 @@ import os.path as osp
 import uuid
 import requests
 import json
-import olefile
-from shutil import copyfile
+from shutil import copyfile, rmtree
+from Config import Config
 
-def save_uploadedfile(uploadedfile):
-    os.makedirs("temp", exist_ok=True)
+def save_uploadedfile(uploadedfile, phnum):
+    os.makedirs(osp.join('user', phnum), exist_ok=True)
     
     fname = str(uuid.uuid4()) + '.mp4'
     
-    with open(osp.join("temp", fname), "wb") as f:
+    with open(osp.join('user', phnum, fname), "wb") as f:
         f.write(uploadedfile)
 
     return fname
 
 
 def get_location():
-    send_url = "[MY-API-KEYS]"
+    send_url = f'http://api.ipstack.com/check?access_key={Config.LOCATION_API}'
     geo_req = requests.get(send_url)
     geo_json = json.loads(geo_req.text)
     latitude = geo_json['latitude']
@@ -27,16 +27,21 @@ def get_location():
     
     return latitude, longitude
 
-def save(data):
-    os.makedirs("report_video", exist_ok=True)
+
+def save(phnum):
+    tmp_dir = osp.join('user', phnum)
+    save_dir = osp.join('record_video', phnum)
+    os.makedirs(save_dir, exist_ok=True)
     
-    for f in os.listdir('temp'):
-        p = osp.join('temp', f)
-        copyfile(p, osp.join('report_video', f))
-        
-        
-def remove_all():
-    for f in os.listdir('temp'):
-        p = osp.join('temp', f)
-        
-        os.remove(p)
+    li = os.listdir(tmp_dir)
+    
+    if len(li) == 0:
+        return
+    
+    copyfile(osp.join(tmp_dir, li[0]), osp.join(save_dir, li[0]))
+    remove(phnum)
+    
+    
+def remove(phnum):
+    cur_dir = osp.join('user', phnum)
+    rmtree(cur_dir)
