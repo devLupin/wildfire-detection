@@ -7,9 +7,12 @@ from Config import Config
 import moviepy.video.io.ImageSequenceClip
 from shutil import rmtree
 from time import sleep
+from tqdm import tqdm
 
 
 def video2frame(cur_video):
+    print('split frames.....')
+    
     save_path = 'video2frame'
     os.makedirs(save_path, exist_ok=True)
     
@@ -39,10 +42,10 @@ def detect_frame(path):
     
     count = 0
     
-    for f in origin:
+    for f in tqdm(origin, desc='detect fire & smoke.....'):
         img = cv2.imread(osp.join(path, f))
 
-        results = model.predict(img)
+        results = model.predict(img, conf=Config.CONFIDENCE, verbose=False)
         for r in results:
             boxes = r.boxes
             for box in boxes:
@@ -86,7 +89,7 @@ def processing_video():
         os.makedirs(save_prefix, exist_ok=True)
         
         user_prefix = osp.join(root_prefix, user)
-        for f in os.listdir(user_prefix):
+        for f in tqdm(os.listdir(user_prefix), desc='make video.....'):
             cur_video = osp.join(user_prefix, f)
             
             frame_path = video2frame(cur_video)
@@ -97,7 +100,7 @@ def processing_video():
             image_files = [osp.join(detect_path, img) for img in image_files]
 
             clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(image_files, fps=30)
-            clip.write_videofile(osp.join(save_prefix, f.split('.')[0] + '.mp4'))
+            clip.write_videofile(osp.join(save_prefix, f.split('.')[0] + '.mp4'), verbose=False)
             
             rmtree(frame_path)
             rmtree(detect_path)
@@ -108,5 +111,5 @@ def processing_video():
             
 
 if __name__ == '__main__':
-    while(sleep(5000)):
-        processing_video()
+    # while(sleep(5000)):
+    processing_video()

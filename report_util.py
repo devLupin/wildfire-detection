@@ -42,6 +42,20 @@ def save(phnum):
     remove(phnum)
     
     
+def save_info(phnum, fname):
+    from datetime import datetime
+    now = datetime.now()
+    latitude, longitude = get_location()
+    
+    save_dir = osp.join('process_video', phnum)
+    os.makedirs(save_dir, exist_ok=True)
+    
+    f = open(osp.join(save_dir, fname.split('.')[0]+'.txt'), 'w+')
+    f.write(now.strftime('%Y-%m-%d %H:%M:%S') + ' ' + str(latitude) + ' ' + str(longitude))
+    f.close()
+    
+    
 def remove(phnum):
     cur_dir = osp.join('user', phnum)
     rmtree(cur_dir)
+    

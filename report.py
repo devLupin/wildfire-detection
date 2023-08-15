@@ -1,5 +1,4 @@
 import streamlit as st
-from st_pages import Page, show_pages, add_page_title
 from report_util import *
 import pandas as pd
 from shutil import copyfile
@@ -67,6 +66,7 @@ with st.form("temp", clear_on_submit=True):
         st.markdown("## **Your submission is complete.**")
         st.markdown("## **Please close this page.**")
         save(phnum)
+        save_info(phnum, fname)
     
     else:
         st.stop()
