@@ -1,21 +1,39 @@
 # Real-time wildfire detection
-- author : Lupin
 
-A faster way to detect fire using A.I.
+A perfect way to detect fire using A.I.
 
-https://github.com/devLupin/wildfire-detection/assets/33558083/a18ba917-625c-4e84-a1ae-9f5265e4ea31
+- Real-time Detection
+  - Detect fire from images obtained from cameras(e.g,.CCTV)
+  - When detect fire, A beep sounds.
+    - Constant surveillance can make you sleepy:)
+- User report
+  - Anyone can report the current fire situation through the web app.
+  - The current location and phone number of the reporter are also sent.
+- Dashboard
+  - Apply fire detector to recorded video.
+  - You can check the fire video and location for each reporter.
+
+![platform](https://user-images.githubusercontent.com/33558083/260911667-3f33d2bc-0fe2-4ff3-9855-b1ce2437ff18.png)
+
+- Examples (I couldn't actually start a fire, so I tried to reproduce the situation.)
+  - Real-time Detection
+
+  - User report
+
+  - Dashboard
 
 ## 01. Used Dataset
 <hr>
  
 - [화재영상 3D 객체 데이터 생성](https://aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=realm&dataSetSn=71472)
 - [WILDFIRE-I](https://data.mendeley.com/datasets/9kz5pfw4xm/3)
+- [DFireDataset](https://github.com/gaiasd/DFireDataset)
 
 ## 02. Preprocessing
 <hr>
 
 - convert format to Origin dataset <-> COCO dataset
-  - refer to `*_preprocess.py`
+  - refer to `preprocess/[Dataset]_preprocess.py`
 
 ## 03. Model
 <hr>
@@ -23,12 +41,20 @@ https://github.com/devLupin/wildfire-detection/assets/33558083/a18ba917-625c-4e8
 - **Main**
   - [YOLOv8](https://github.com/ultralytics/ultralytics) transfer learning
 - additional
-  - RetinaNet : bad performance
+  - [RetinaNet](https://arxiv.org/abs/1708.02002) : bad performance
 
 ## 04. Setting (Windows Only)
 <hr>
 
 - prerequisite
+  - [Location API](https://ipstack.com/) Key
+    
+    ```python
+    ## Config.py
+    class Config:
+      LOCATION_API = 'YOUR_LOCATION_API_KEY'
+    ```
+
   - Virtual Environment
     
     ```shell
@@ -61,8 +87,8 @@ https://github.com/devLupin/wildfire-detection/assets/33558083/a18ba917-625c-4e8
 
 ## 06. Result
 
-- [train](yolov8/runs/train/)
-- [validation](yolov8/runs/val/)
+- [train](yolov8/runs3/train/)
+- [validation](yolov8/runs3/val/)
 
 ## License
 <hr>
