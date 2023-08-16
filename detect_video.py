@@ -111,5 +111,6 @@ def processing_video():
             
 
 if __name__ == '__main__':
-    # while(sleep(5000)):
-    processing_video()
+    while True:
+        processing_video()
+        sleep(5)

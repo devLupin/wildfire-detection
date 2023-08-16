@@ -13,7 +13,7 @@ import winsound
 model = YOLO(Config.MODEL)
 blue_color = (255, 0, 0)
 
-st.title("Real-tim Fire Detection")
+st.title("Real-time Fire Detection")
 st.markdown("Authored by : [Lupin](https://github.com/devLupin)")
 
 

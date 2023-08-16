@@ -46,22 +46,6 @@ with st.form("temp", clear_on_submit=True):
     st.video(video_bytes)
     
     
-    
-    st.markdown("")
-    st.markdown("### 👀 Check your location")
-    
-    latitude, longitude = get_location()
- 
-    ## Create a sample DataFrame with latitude and longitude values
-    data = pd.DataFrame({
-        'latitude': [latitude],
-        'longitude': [longitude]
-    })
-    
-    ## Create a map with the data
-    st.map(data, zoom=14)
-    
-    
     if st.form_submit_button("✅ Submit"):
         st.markdown("## **Your submission is complete.**")
         st.markdown("## **Please close this page.**")
