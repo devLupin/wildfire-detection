@@ -16,7 +16,7 @@ A perfect way to detect fire using A.I.
 ![platform](https://user-images.githubusercontent.com/33558083/260911667-3f33d2bc-0fe2-4ff3-9855-b1ce2437ff18.png)
 
 - Examples (I couldn't actually start a fire, so I tried to reproduce the situation.)
-  - Real-time Detection
+  - Real-time Detection with beep sounds
 
     https://github.com/devLupin/wildfire-detection/assets/33558083/cd6bec32-f55f-46d5-bc14-b751d8a42276
 
@@ -66,32 +66,49 @@ A perfect way to detect fire using A.I.
   - Virtual Environment
     
     ```shell
-    conda create -n fire-detection python=3.8
-    conda activate fire-detection
+    conda create -n wildfire-detection python=3.8
+    conda activate wildfire-detection
     cd [your-work-dir]
     ```
 
   - Package
     - First, CUDA, Torch >= 2.0.0
       - In my case, CUDA 11.7 / Torch >= 2.0.0
-    - And then, `pip install -r [fire-detection/requirements.txt]`
+    - And then, `pip install -r [wildfire-detection/requirements.txt]`
 
-- Install [best.ckpt file](https://drive.google.com/file/d/1QDZ6sb2CwK5jALB5LAwaW2LkHUxd8PI0/view?usp=sharing)
+- Install [best.ckpt file](https://drive.google.com/file/d/1VCHBUoSWpHvnYKxJ00bxzmAUKgenF3DZ/view?usp=drive_link)
   - Move it `[wildfire-detection]/yolov8/runs/train/weights`
 
 
 ## 05. Quick Start
 <hr>
 
-- Fire Detection from webcam
-  - Then run it with Streamlit and open http://localhost:8501/.
-    - You see the app view, so click the "START" button.
-    - Then, video and audio streaming starts. If asked for permissions to access the camera and microphone, allow it.
+- First of all, run `detect_video_backend.py` for make fire detection video.
+  - The video uploaded by the reporter is converted into a video in which a fire is detected.
+  - Runs every 5 seconds.
 
-  ```shell
-  cd [wildfire-detection]
-  streamlit run app.py
-  ```
+- Web APP
+  - If asked for permissions to access the camera and microphone, allow it.
+
+  - Open console
+    - Real-time Detection : [real-time_detection.py](real-time_detection.py)
+    - User report : [report.py](report.py)
+    - Dashboard : [dashboard.py](dashboard.py)
+
+    ```shell
+    cd [wildfire-detection]
+    streamlit run [code.py]
+
+
+    // You will see these messages.
+    You can now view your Streamlit app in your browser.
+
+    Local URL: http://localhost:8501
+    Network URL: http://[YOUR-INTERNAL-IP-ADDRESS]:8501
+    ```
+
+  - Then run it with [Streamlit](https://streamlit.io/) and open http://localhost:[PORT]
+    - If you want external access, set up port forwarding or inbound rules.
 
 ## 06. Result
 
