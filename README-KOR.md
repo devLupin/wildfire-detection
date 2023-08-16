@@ -76,7 +76,7 @@ AI를 이용한 완벽한 화재 감지
       - 본인은 CUDA 11.7 / Torch == 2.0.0
     - 그리고 나서, `pip install -r [wildfire-detection/requirements.txt]`
 
-- [best.ckpt file](https://drive.google.com/file/d/1VCHBUoSWpHvnYKxJ00bxzmAUKgenF3DZ/view?usp=drive_link) 설치
+- [best.ckpt file](https://drive.google.com/file/d/1VCHBUoSWpHvnYKxJ00bxzmAUKgenF3DZ/view?usp=drive_link) 다운로드
   - `[wildfire-detection]/yolov8/runs/train/weights`로 이동
 
 

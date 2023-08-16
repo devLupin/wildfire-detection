@@ -76,7 +76,7 @@ A perfect way to detect fire using A.I.
       - In my case, CUDA 11.7 / Torch == 2.0.0
     - And then, `pip install -r [wildfire-detection/requirements.txt]`
 
-- Install [best.ckpt file](https://drive.google.com/file/d/1VCHBUoSWpHvnYKxJ00bxzmAUKgenF3DZ/view?usp=drive_link)
+- Download [best.ckpt file](https://drive.google.com/file/d/1VCHBUoSWpHvnYKxJ00bxzmAUKgenF3DZ/view?usp=drive_link)
   - Move it `[wildfire-detection]/yolov8/runs/train/weights`
 
 
