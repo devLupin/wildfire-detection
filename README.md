@@ -18,9 +18,17 @@ A perfect way to detect fire using A.I.
 - Examples (I couldn't actually start a fire, so I tried to reproduce the situation.)
   - Real-time Detection
 
+    https://github.com/devLupin/wildfire-detection/assets/33558083/cd6bec32-f55f-46d5-bc14-b751d8a42276
+
   - User report
 
+    https://github.com/devLupin/wildfire-detection/assets/33558083/22d12e96-9e88-419d-a0db-85cc7e92c1d4
+
   - Dashboard
+
+    https://github.com/devLupin/wildfire-detection/assets/33558083/13943350-d262-48b1-a51a-814c87120dfb
+
+ 
 
 ## 01. Used Dataset
 <hr>
