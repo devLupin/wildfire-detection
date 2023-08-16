@@ -1,9 +1,9 @@
-# Real-time wildfire detection
+# Real-time wildfire detection([한국어](README-KOR.md))
 
 A perfect way to detect fire using A.I.
 
 - Real-time Detection
-  - Detect fire from images obtained from cameras(e.g,.CCTV)
+  - Detect fire from video obtained from cameras(e.g,.CCTV)
   - When detect fire, A beep sounds.
     - Constant surveillance can make you sleepy:)
 - User report
@@ -73,7 +73,7 @@ A perfect way to detect fire using A.I.
 
   - Package
     - First, CUDA, Torch >= 2.0.0
-      - In my case, CUDA 11.7 / Torch >= 2.0.0
+      - In my case, CUDA 11.7 / Torch == 2.0.0
     - And then, `pip install -r [wildfire-detection/requirements.txt]`
 
 - Install [best.ckpt file](https://drive.google.com/file/d/1VCHBUoSWpHvnYKxJ00bxzmAUKgenF3DZ/view?usp=drive_link)
@@ -107,7 +107,7 @@ A perfect way to detect fire using A.I.
     Network URL: http://[YOUR-INTERNAL-IP-ADDRESS]:8501
     ```
 
-  - Then run it with [Streamlit](https://streamlit.io/) and open http://localhost:[PORT]
+  - Then open http://localhost:[PORT]
     - If you want external access, set up port forwarding or inbound rules.
 
 ## 06. Result
